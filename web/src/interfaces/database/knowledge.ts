@@ -76,12 +76,14 @@ export interface ITenantInfo {
 export interface IChunk {
   available_int: number; // Whether to enable, 0: not enabled, 1: enabled
   chunk_id: string;
-  content_with_weight: string;
+  content_with_weight?: string;
   doc_id: string;
   doc_name: string;
   img_id: string;
   important_kwd: any[];
   positions: number[][];
+  docnm_kwd?: string;
+  vector_similarity?: number;
 }
 
 export interface ITestingChunk {

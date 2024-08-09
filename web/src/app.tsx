@@ -57,6 +57,7 @@ const RootProvider = ({ children }: React.PropsWithChildren) => {
         theme={{
           token: {
             fontFamily: 'Inter',
+            colorPrimary: '#5b77e3',
           },
         }}
         locale={locale}

@@ -1,29 +1,36 @@
 .messageItem {
-  padding: 24px 0;
+  padding: 16px 0;
   .messageItemSection {
     display: inline-block;
   }
   .messageItemSectionLeft {
     width: 80%;
+    // .messageItemContent {
+    //   background-image: linear-gradient(90deg, #eef3fc 0%, #e9e8f7 100%);
+    // }
   }
   .messageItemSectionRight {
     width: 80%;
   }
   .messageItemContent {
     display: inline-flex;
-    gap: 20px;
+    gap: 12px;
+    // padding: 12px;
+    // border-radius: 8px;
   }
   .messageItemContentReverse {
     flex-direction: row-reverse;
   }
   .messageText {
     .chunkText();
+    // margin-top: 6px;
     padding: 0 14px;
-    background-color: rgba(249, 250, 251, 1);
+    // background-color: rgba(249, 250, 251, 1);
     word-break: break-all;
   }
   .messageTextBase() {
-    padding: 6px 10px;
+    // margin-top: 6px;
+    padding: 12px;
     border-radius: 8px;
     & > p {
       margin: 0;
@@ -32,13 +39,13 @@
   .messageText {
     .chunkText();
     .messageTextBase();
-    background-color: #e6f4ff;
+    background-image: linear-gradient(90deg, #eef3fc 0%, #e9e8f7 100%);
     word-break: break-all;
   }
   .messageUserText {
     .chunkText();
     .messageTextBase();
-    background-color: rgb(248, 247, 247);
+    background-color: #e6f4ff;
     word-break: break-all;
     text-align: justify;
   }
@@ -57,4 +64,34 @@
 
 .messageItemRight {
   text-align: right;
+}
+
+.reference-wrapper {
+  padding: 12px;
+  box-shadow: 0 1px 20px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  .reference-list {
+    margin-top: 6px;
+    .reference-item {
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 14px;
+      cursor: pointer;
+      &:hover {
+        background-color: #f5f5f5;
+      }
+      .content {
+        font-size: 12px;
+        margin-top: 4px;
+        color: #00000087;
+        display: -webkit-box;
+        line-clamp: 2;
+        -webkit-line-clamp: 2; /* 显示两行文本 */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
 }

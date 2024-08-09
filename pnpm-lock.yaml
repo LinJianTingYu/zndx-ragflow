@@ -1,0 +1,103 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  '@antv/g':
+    specifier: ^6.0.12
+    version: 6.0.12
+
+packages:
+
+  /@antv/g-camera-api@2.0.11:
+    resolution: {integrity: sha512-wgF0zLixf9mDZvFXItnX9VLTxLM0mDSJvMRQ0pPPhFbMCDyewECLskBfU8a7tdQuIMjKEHiJmsrFVoheZTUZxQ==}
+    dependencies:
+      '@antv/g-lite': 2.0.8
+      '@antv/util': 3.3.8
+      gl-matrix: 3.4.3
+      tslib: 2.6.3
+    dev: false
+
+  /@antv/g-dom-mutation-observer-api@2.0.8:
+    resolution: {integrity: sha512-SeQ3CtdtUMWrQD4HgQH+o8ayP30yeZwBMFnplsiEzJxYAqt9Clh8EXJtUAVP7sjznKiYmLvFZW53uu2bUlPyTw==}
+    dependencies:
+      '@antv/g-lite': 2.0.8
+    dev: false
+
+  /@antv/g-lite@2.0.8:
+    resolution: {integrity: sha512-heq4GGHZD4Mk9QbgvjCjZO+sjlxHHmxw1uWZLdxfCSKZKF79AVJ2Srx1Eu0WwL+UnsAgwdmlWKBWh4YLx0Y4XQ==}
+    dependencies:
+      '@antv/g-math': 3.0.0
+      '@antv/util': 3.3.8
+      d3-color: 3.1.0
+      eventemitter3: 5.0.1
+      gl-matrix: 3.4.3
+      rbush: 3.0.1
+      tslib: 2.6.3
+    dev: false
+
+  /@antv/g-math@3.0.0:
+    resolution: {integrity: sha512-AkmiNIEL1vgqTPeGY2wtsMdBBqKFwF7SKSgs+D1iOS/rqYMsXdhp/HvtuQ5tx/HdawE/ZzTiicIYopc520ADZw==}
+    dependencies:
+      '@antv/util': 3.3.8
+      gl-matrix: 3.4.3
+      tslib: 2.6.3
+    dev: false
+
+  /@antv/g-web-animations-api@2.0.9:
+    resolution: {integrity: sha512-ekAB/OVaIBegNjtjydR9cmCZF67SK0w38aOj6n39G8EeOnCD2vOdV3grAIPWkjYU0oixoQ6IYQUXc+3nMZ0Txg==}
+    dependencies:
+      '@antv/g-lite': 2.0.8
+      '@antv/util': 3.3.8
+      tslib: 2.6.3
+    dev: false
+
+  /@antv/g@6.0.12:
+    resolution: {integrity: sha512-7FEYxc8rR79Wi3VdCHqf/MY0a+6X3N5y8D0FiGc3XBtt8WnmJYWO/wcN8rQRvIV//ecMSeq9V/9En1TqyOnaEA==}
+    dependencies:
+      '@antv/g-camera-api': 2.0.11
+      '@antv/g-dom-mutation-observer-api': 2.0.8
+      '@antv/g-lite': 2.0.8
+      '@antv/g-web-animations-api': 2.0.9
+    dev: false
+
+  /@antv/util@3.3.8:
+    resolution: {integrity: sha512-RO2vmp84adfZn5HVXuNtHr35PRWthw4oCUv0hn9DmEWwOJSeU6NtDCEg9KvU8sH2bJaS3fe/cppNSVy2L8tOaw==}
+    dependencies:
+      fast-deep-equal: 3.1.3
+      gl-matrix: 3.4.3
+      tslib: 2.6.3
+    dev: false
+
+  /d3-color@3.1.0:
+    resolution: {integrity: sha512-zg/chbXyeBtMQ1LbD/WSoW2DpC3I0mpmPdW+ynRTj/x2DAWYrIY7qeZIHidozwV24m4iavr15lNwIwLxRmOxhA==}
+    engines: {node: '>=12'}
+    dev: false
+
+  /eventemitter3@5.0.1:
+    resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
+    dev: false
+
+  /fast-deep-equal@3.1.3:
+    resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
+    dev: false
+
+  /gl-matrix@3.4.3:
+    resolution: {integrity: sha512-wcCp8vu8FT22BnvKVPjXa/ICBWRq/zjFfdofZy1WSpQZpphblv12/bOQLBC1rMM7SGOFS9ltVmKOHil5+Ml7gA==}
+    dev: false
+
+  /quickselect@2.0.0:
+    resolution: {integrity: sha512-RKJ22hX8mHe3Y6wH/N3wCM6BWtjaxIyyUIkpHOvfFnxdI4yD4tBXEBKSbriGujF6jnSVkJrffuo6vxACiSSxIw==}
+    dev: false
+
+  /rbush@3.0.1:
+    resolution: {integrity: sha512-XRaVO0YecOpEuIvbhbpTrZgoiI6xBlz6hnlr6EHhd+0x9ase6EmeN+hdwwUaJvLcsFFQ8iWVF1GAK1yB0BWi0w==}
+    dependencies:
+      quickselect: 2.0.0
+    dev: false
+
+  /tslib@2.6.3:
+    resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
+    dev: false

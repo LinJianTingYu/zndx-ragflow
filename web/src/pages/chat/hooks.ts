@@ -627,8 +627,21 @@ export const useSendMessage = (
     }
   }, [setDone, conversationId]);
 
+  const handleReGenerateContent = useCallback(
+    (content: string) => {
+      if (!done || trim(content) === '') return;
+
+      if (done) {
+        setValue('');
+        handleSendMessage(content.trim());
+      }
+      addNewestConversation(content);
+    },
+    [addNewestConversation, handleSendMessage, done, setValue, value],
+  );
+
   const handlePressEnter = useCallback(() => {
-    if (trim(value) === '') return;
+    if (!done || trim(value) === '') return;
 
     if (done) {
       setValue('');
@@ -638,6 +651,7 @@ export const useSendMessage = (
   }, [addNewestConversation, handleSendMessage, done, setValue, value]);
 
   return {
+    handleReGenerateContent,
     handlePressEnter,
     handleInputChange,
     value,
@@ -969,6 +983,22 @@ export const usePreviewChat = (dialogId: string) => {
     handlePreview,
     contextHolder,
   };
+};
+
+export const useExportContentToTXT = () => {
+  const handleExport = useCallback(
+    ({ content, fileName }: { content: string; fileName: string }) => {
+      const blob = new Blob([content], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = fileName;
+      link.click();
+      URL.revokeObjectURL(url);
+    },
+    [],
+  );
+  return handleExport;
 };
 
 //#endregion
