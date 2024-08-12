@@ -30,6 +30,7 @@ import { buildMessageItemReference } from '../utils';
 import { useFetchUserInfo } from '@/hooks/user-setting-hooks';
 import { IDialog } from '@/interfaces/database/chat';
 import styles from './index.less';
+import { useMemo } from 'react';
 
 const ChatContainer = () => {
   const {
@@ -81,6 +82,10 @@ const ChatContainer = () => {
     });
   };
 
+  const lasetQuestionStr = useMemo(() => {
+    return conversation?.message?.findLast((item) => item.role === 'user')?.content || ''
+  }, [conversation]);
+
   return (
     <>
       <Flex flex={1} className={styles.chatContainer} vertical>
@@ -103,7 +108,7 @@ const ChatContainer = () => {
               width: 'calc(100% - 200px)',
             }}
           >
-            提问：专利分析的重要
+            { lasetQuestionStr && `提问：${ lasetQuestionStr }` }
           </Col>
           <span>
             <Tag color="geekblue" style={{ lineHeight: '22px' }}>
