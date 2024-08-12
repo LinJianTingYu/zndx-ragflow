@@ -29,8 +29,8 @@ import { buildMessageItemReference } from '../utils';
 
 import { useFetchUserInfo } from '@/hooks/user-setting-hooks';
 import { IDialog } from '@/interfaces/database/chat';
-import styles from './index.less';
 import { useMemo } from 'react';
+import styles from './index.less';
 
 const ChatContainer = () => {
   const {
@@ -83,7 +83,10 @@ const ChatContainer = () => {
   };
 
   const lasetQuestionStr = useMemo(() => {
-    return conversation?.message?.findLast((item) => item.role === 'user')?.content || ''
+    return (
+      conversation?.message?.findLast((item) => item.role === 'user')
+        ?.content || ''
+    );
   }, [conversation]);
 
   return (
@@ -108,7 +111,7 @@ const ChatContainer = () => {
               width: 'calc(100% - 200px)',
             }}
           >
-            { lasetQuestionStr && `提问：${ lasetQuestionStr }` }
+            {lasetQuestionStr && `提问：${lasetQuestionStr}`}
           </Col>
           <span>
             <Tag color="geekblue" style={{ lineHeight: '22px' }}>

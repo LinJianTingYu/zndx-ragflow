@@ -1,6 +1,5 @@
-import { ReactComponent as Avatars } from '@/assets/svg/login-avatars.svg';
 import SvgIcon from '@/components/svg-icon';
-import { Flex, Rate, Space, Typography } from 'antd';
+import { Flex, Typography } from 'antd';
 import classNames from 'classnames';
 
 import { useTranslate } from '@/hooks/common-hooks';

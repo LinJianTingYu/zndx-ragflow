@@ -87,15 +87,11 @@ const PromptEngine = (
     setDataSource(newData);
   };
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return dataSource
-        .filter((x) => x.variable.trim() !== '')
-        .map((x) => ({ key: x.variable, optional: x.optional }));
-    },
-    [dataSource],
-  );
+  useImperativeHandle(ref, () => {
+    return dataSource
+      .filter((x) => x.variable.trim() !== '')
+      .map((x) => ({ key: x.variable, optional: x.optional }));
+  }, [dataSource]);
 
   const columns: TableProps<DataType>['columns'] = [
     {
