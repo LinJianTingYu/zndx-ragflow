@@ -27,7 +27,7 @@ const RagHeader = () => {
     () => [
       { path: '/knowledge', name: t('knowledgeBase'), icon: KnowledgeBaseIcon },
       { path: '/chat', name: t('chat'), icon: MessageOutlined },
-      { path: '/flow', name: t('flow'), icon: GraphIcon },
+      // { path: '/flow', name: t('flow'), icon: GraphIcon },
       { path: '/file', name: t('fileManager'), icon: FileIcon },
     ],
     [t],
@@ -58,6 +58,7 @@ const RagHeader = () => {
         height: '72px',
       }}
     >
+      {/* <span style={{width:128}}></span> */}
       <Space size={12} onClick={handleLogoClick} className={styles.logoWrapper}>
         {/* <img src="/logo.svg" alt="" className={styles.appIcon} />
         <span className={styles.appName}>{appConf.appName}</span> */}

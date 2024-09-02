@@ -205,6 +205,19 @@ export const useSendSharedMessage = (
     }
   }, [answer, addNewestAnswer]);
 
+  const handleReGenerateContent = useCallback(
+    (content: string) => {
+      if (!done || trim(content) === '') return;
+
+      if (done) {
+        setValue('');
+        handleSendMessage(content.trim());
+      }
+      addNewestConversation(content);
+    },
+    [addNewestConversation, handleSendMessage, done, setValue, value],
+  );
+
   const handlePressEnter = useCallback(() => {
     if (trim(value) === '') return;
     if (done) {
@@ -216,6 +229,7 @@ export const useSendSharedMessage = (
 
   return {
     handlePressEnter,
+    handleReGenerateContent,
     handleInputChange,
     value,
     loading: !done,

@@ -164,9 +164,14 @@ const ChatConfigurationModal = ({
         {...layout}
         name="nest-messages"
         form={form}
-        style={{ maxWidth: 600 }}
         validateMessages={validateMessages}
         colon={false}
+        style={{
+          height: 'calc(100vh - 400px)',
+          overflowY: 'auto',
+          paddingRight: 16,
+          maxWidth: 600
+        }}
       >
         {Object.entries(segmentedMap).map(([key, Element]) => (
           <Element

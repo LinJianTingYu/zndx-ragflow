@@ -31,6 +31,7 @@ const ChatContainer = () => {
     handleInputChange,
     value,
     loading: sendLoading,
+    handleReGenerateContent
   } = useSendSharedMessage(
     conversation,
     addNewestConversation,
@@ -39,6 +40,11 @@ const ChatContainer = () => {
     addNewestAnswer,
   );
   const sendDisabled = useSendButtonDisabled(value);
+
+  const handleReGenerate = (content: string) => {
+    if (loading) return;
+    handleReGenerateContent(content);
+  };
 
   return (
     <>
@@ -53,6 +59,7 @@ const ChatContainer = () => {
                     item={message}
                     nickname="You"
                     reference={buildMessageItemReference(conversation, message)}
+                    handleReGenerate={handleReGenerate}
                     loading={
                       message.role === MessageType.Assistant &&
                       sendLoading &&

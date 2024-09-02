@@ -1,4 +1,4 @@
-let api_host = `http://demo.ragflow.io/v1`;
+let api_host = process.env.NODE_ENV === "development" ? `https://rag8.k3s.tudb.work/v1` : '/v1';
 
 export { api_host };
 
