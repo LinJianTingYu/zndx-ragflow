@@ -88,10 +88,10 @@ export const useSetCurrentDialog = () => {
   );
 
   const setCurrentDialog = useCallback(
-    (dialog: IDialog) => {
+    (dialogId: string) => {
       dispatch({
         type: 'chatModel/setCurrentDialog',
-        payload: dialog,
+        payload: { id: dialogId },
       });
     },
     [dispatch],
@@ -236,7 +236,6 @@ export const useEditDialog = () => {
   const [dialog, setDialog] = useState<IDialog>({} as IDialog);
   const fetchDialog = useFetchDialog();
   const submitDialog = useSetDialog();
-  const {setCurrentDialog} = useSetCurrentDialog();
   const loading = useOneNamespaceEffectsLoading('chatModel', ['setDialog']);
 
   const {
@@ -256,10 +255,9 @@ export const useEditDialog = () => {
 
       if (ret === 0) {
         hideModal();
-        setCurrentDialog(dialog)
       }
     },
-    [submitDialog, hideModal, setCurrentDialog],
+    [submitDialog, hideModal],
   );
 
   const handleShowDialogEditModal = useCallback(
@@ -268,12 +266,11 @@ export const useEditDialog = () => {
         const ret = await fetchDialog(dialogId, false);
         if (ret.retcode === 0) {
           setDialog(ret.data);
-          setCurrentDialog(ret.data)
         }
       }
       showDialogEditModal();
     },
-    [showDialogEditModal, fetchDialog, setCurrentDialog],
+    [showDialogEditModal, fetchDialog],
   );
 
   const clearDialog = useCallback(() => {

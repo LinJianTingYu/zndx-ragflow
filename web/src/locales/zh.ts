@@ -25,7 +25,8 @@ export default {
       comingSoon: '即将推出',
       download: '下载',
       close: '关闭',
-      preview: '预览'
+      preview: '预览',
+      move: '移动',
     },
     login: {
       login: '登录',
@@ -308,12 +309,7 @@ export default {
       chat: '聊天',
       newChat: '新建聊天',
       send: '发送',
-      move: '移动',
-      reanswer: '重新回答',
-      exportQA: '导出对话',
-      qaNumber: '{{number}}条对话',
-      askQuestion: '提问',
-      sendPlaceholder: '输入你想要了解的问题...',
+      sendPlaceholder: '消息概要助手...',
       chatConfiguration: '聊天配置',
       chatConfigurationDescription: '在这里，为你的专业知识库装扮专属助手！ 💕',
       assistantName: '助理姓名',

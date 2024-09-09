@@ -69,8 +69,8 @@ const ChatContainer = () => {
   };
 
   const handleExportMessage = () => {
-    if (!conversation?.message?.length)
-      return message.error('没有对话记录可以导出');
+    if (!conversation.message.length)
+      return message.error(t('没有对话记录可以导出'));
     // 定义要写入文件的内容
     let content = ``;
     conversation.message.map((item) => {
@@ -111,17 +111,17 @@ const ChatContainer = () => {
               width: 'calc(100% - 200px)',
             }}
           >
-            {lasetQuestionStr && `${t('askQuestion')}：${lasetQuestionStr}`}
+            {lasetQuestionStr && `提问：${lasetQuestionStr}`}
           </Col>
           <span>
             <Tag color="geekblue" style={{ lineHeight: '22px' }}>
               <ClockCircleOutlined />
               <span style={{ marginLeft: 4 }}>
-                {t('qaNumber',{number: conversation?.message?.length||0})}
+                {conversation?.message?.length}条对话
               </span>
             </Tag>
             <Button type="primary" size="small" onClick={handleExportMessage}>
-              {t('exportQA')}
+              导出对话
             </Button>
           </span>
         </Row>
@@ -140,7 +140,6 @@ const ChatContainer = () => {
                     item={message}
                     nickname={userInfo.nickname}
                     assistantName={currentDialog.name}
-                    currentDialog={currentDialog}
                     avatar={userInfo.avatar}
                     reference={buildMessageItemReference(conversation, message)}
                     clickDocumentButton={clickDocumentButton}

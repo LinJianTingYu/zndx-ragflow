@@ -4,7 +4,7 @@ import { Tooltip } from 'antd';
 import { useState } from 'react';
 import { CopyToClipboard as Clipboard, Props } from 'react-copy-to-clipboard';
 
-const CopyToClipboard = ({ text, color }: {text:string,color:string}) => {
+const CopyToClipboard = ({ text }: Props) => {
   const [copied, setCopied] = useState(false);
   const { t } = useTranslate('common');
 
@@ -16,7 +16,7 @@ const CopyToClipboard = ({ text, color }: {text:string,color:string}) => {
   };
 
   return (
-    <Tooltip color={color} title={copied ? t('copied') : t('copy')}>
+    <Tooltip title={copied ? t('copied') : t('copy')}>
       <Clipboard text={text} onCopy={handleCopy}>
         {copied ? <CheckOutlined /> : <CopyOutlined />}
       </Clipboard>
